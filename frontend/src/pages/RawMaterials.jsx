@@ -15,10 +15,15 @@ export default function RawMaterials() {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error: {error}</p>
 
-    const handleDelete = (id) => {
-        if (confirm("Are you sure you want to delete it?")) {
-            dispatch(deleteRawMaterial(id))
+    const handleDelete = async (id) => {
+        if (confirm("Are you sure about that?")) {
+            try {
+                await dispatch(deleteRawMaterial(id)).unwrap()
+            } catch (err) {
+                alert("Error")
+            }
         }
+
     }
 
     return (

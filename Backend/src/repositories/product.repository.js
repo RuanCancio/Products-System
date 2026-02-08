@@ -25,12 +25,17 @@ export const updateProduct = async (id, {name, price})=> {
   }
 }
 
-export const deleteProduct = async (id)=> {
-const [result] = await db.execute(
+export const deleteProduct = async (id) => {
+  await db.execute(
+    "DELETE FROM product_raw_materials WHERE product_id = ?",
+    [id]
+  )
+  const [result] = await db.execute(
     "DELETE FROM product WHERE id = ?",
     [id]
-)
-if (result.affectedRows === 0) {
+  )
+
+  if (result.affectedRows === 0) {
     throw new Error("Product not found")
   }
 }
