@@ -151,5 +151,5 @@ Frontend desacoplado do backend via Axios
 
 👨‍💻 Autor
 Projeto desenvolvido por Ruan Cancio
-Com apoio técnico e arquitetural 🤝
+
 
