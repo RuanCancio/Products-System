@@ -1,0 +1,36 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    background-color: rgb(245, 243, 243);
+}
+
+nav {
+    background-color: rgb(9, 116, 116);
+
+    & ul {
+        padding: 1rem;
+        margin: 0px;
+        list-style-type: none;
+        
+
+        & li {
+            margin: 10px;
+            
+
+            & a {
+                margin: 10px;
+                padding: 5px;
+                border-radius: 8px;
+                transition: 0.2s ease;
+                color: white;
+                text-decoration: none;
+            }
+
+            & a:hover {
+                border: 2px solid rgb(194, 182, 182);
+      
