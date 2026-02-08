@@ -149,7 +149,15 @@ Redux Toolkit centraliza todo o estado da aplicação
 
 Frontend desacoplado do backend via Axios
 
+## Configuração do Banco de Dados
+
+1. Crie um banco MySQL
+2. Execute o arquivo `database.sql`
+3. Crie um arquivo `.env` baseado em `.env.example`
+4. Preencha as variáveis com seus dados do MySQL
+
 👨‍💻 Autor
 Projeto desenvolvido por Ruan Cancio
+
 
 
