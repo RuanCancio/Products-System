@@ -15,29 +15,29 @@ export const findAllProducts = async () => {
     return rows
 }
 
-export const updateProduct = async (id, {name, price})=> {
-   const [result] = await db.execute(
+export const updateProduct = async (id, { name, price }) => {
+    const [result] = await db.execute(
         "UPDATE product SET name = ?, price = ? WHERE id = ?",
         [name, price, id]
     )
     if (result.affectedRows === 0) {
-    throw new Error("Product not found")
-  }
+        throw new Error("Product not found")
+    }
 }
 
 export const deleteProduct = async (id) => {
-  await db.execute(
-    "DELETE FROM product_raw_materials WHERE product_id = ?",
-    [id]
-  )
-  const [result] = await db.execute(
-    "DELETE FROM product WHERE id = ?",
-    [id]
-  )
+    await db.execute(
+        "DELETE FROM product_raw_materials WHERE product_id = ?",
+        [id]
+    )
+    const [result] = await db.execute(
+        "DELETE FROM product WHERE id = ?",
+        [id]
+    )
 
-  if (result.affectedRows === 0) {
-    throw new Error("Product not found")
-  }
+    if (result.affectedRows === 0) {
+        throw new Error("Product not found")
+    }
 }
 
 export const findProductDetails = async () => {

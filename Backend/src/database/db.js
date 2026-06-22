@@ -11,4 +11,17 @@ const db = mysql.createPool({
   port: process.env.DB_PORT
 })
 
+async function testConnection() {
+  try {
+    const connection = await db.getConnection()
+    console.log("✅ Conexão com o banco de dados (Aiven) estabelecida com sucesso!")
+    connection.release()
+  }
+  catch(error) {
+    console.error("❌ Erro ao conectar com o banco de dados:" + error.message)
+  }
+}
+
+testConnection()
+
 export default db
